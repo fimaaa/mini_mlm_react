@@ -1,0 +1,52 @@
+  .left-menu {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    padding-top: 32px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .left-menu ul li {
+    margin-bottom: 10px;
+  }
+  
+  .left-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .left-menu ul li a:hover {
+    background-color: #ddd;
+  }
+  
+  .left-menu ul li.active {
+    background: #333;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .left-menu ul li.active a {
+    color: #ddd;
+  }
+
+  
+  .left-menu {
+    transform: translateX(-200%);
+    transition: transform 0.5s ease-in-out;
+    display: none;
+    /* position: absolute; */
+  }
+  
+  .left-menu.visible {
+    transform: translateX(0);
+    display: block;
+    /* position: relative; */
+  }

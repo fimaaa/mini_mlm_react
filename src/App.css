@@ -1,0 +1,354 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body, #root {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+Header {
+  background: #333;
+  color: white;
+  padding: 1em;
+  z-index: 2;
+}
+
+Footer, #footer {
+  position: flex;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
+}
+
+/* Header.css */
+.header {
+  display: flex;
+  justify-content: space-between; /* Ensure items are spaced out properly */
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+}
+
+.header h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.header .left,
+.header .right {
+  display: flex;
+  align-items: center;
+}
+
+.header .left {
+  flex: 1;
+}
+
+.header .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+}
+
+.header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.header .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header .logout {
+  margin-left: 16px;
+  margin-right: 32px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header h1 {
+    margin-bottom: 10px;
+  }
+
+  .header .left,
+  .header .right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header .user-info {
+    justify-content: center;
+  }
+
+  .header .logout {
+    margin-left: 16px;
+  }
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1; 
+  position: relative; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+  position: relative; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+  z-index: 1;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: stretch;
+  flex: 1; /* This makes the content div take the remaining space */
+  overflow: auto; /* Optional: Add scroll if content overflows */
+  flex-direction: column;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.UserTable {
+  overflow-x: auto;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin: 0 1em;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px; /* Adds space between the input fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-top: 16px; /* Adds margin at the top of the button */
+  box-sizing: border-box;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.user-page-container {
+  position: relative;
+}
+
+.user-page-content.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* This will prevent clicking on elements inside the blurred content */
+}
+
+.swal2-fixed {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 1050 !important;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center; /* Center the pagination */
+  margin-top: 1em; /* Add space above pagination */
+  flex-wrap: wrap; /* Allow pagination to wrap to the next line */
+  align-items: bottom;
+}
+
+.page-item {
+  margin: 1em;
+}
+
+.page-link {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dee2e6;
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.page-link:hover {
+  background-color: #e9ecef;
+}
+
+.active .page-link {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+.disabled .page-link {
+  cursor: not-allowed;
+  color: #6c757d;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  align-self: flex-end;
+  gap: 10px; /* Optional: add space between buttons */
+  padding: 1em;
+}
+
+.close-button-menu {
+  padding: 8px;
+  margin: 8px;
+  position: absolute; /* Absolute positioning */
+  top: 0;
+  left: 1; /* Adjust as needed */
+  z-index: 1000; /* Ensure button is on top of other elements */
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+button {
+  padding: 8px 12px;
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.storageitem-page {
+  padding: 20px;
+}
+
+.storageitem-page {
+  margin: 20px;
+}
+
+.section-box {
+  border: 2px solid #000;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.section-box h3 {
+  margin-top: 0;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.member-card {
+  background-color: #ffc107; /* Yellow background */
+  color: #333; /* Dark text color */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  width: 120px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.member-level {
+  font-weight: bold;
+}
+
+.bonus {
+  font-style: italic;
+}
+
+.print-button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.print-button:hover {
+  background-color: #0056b3;
+}
+
+/* Hide the component on screen */
+.printable-content {
+  display: none;
+}
+
+/* Display the component when printing */
+@media print {
+  .printable-content {
+      display: block !important;
+  }
+}

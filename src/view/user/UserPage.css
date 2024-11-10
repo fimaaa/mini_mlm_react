@@ -1,0 +1,38 @@
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Optional: add space between buttons */
+    padding: 1em;
+}
+
+.member-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.member-photo {
+    max-width: 20vw;
+    min-width: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.info-container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-container p {
+    margin: 10px 0;
+}
+
+.info-container strong {
+    font-weight: bold;
+}

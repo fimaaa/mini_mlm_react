@@ -1,0 +1,44 @@
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .styled-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .styled-table tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+  }
+  
+  .styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .action-button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .action-button.edit {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .action-button.delete {
+    background-color: #f44336;
+    color: white;
+  }
