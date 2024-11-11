@@ -57,7 +57,7 @@ const UserDetailPage = () => {
             if(maxLevel == null) {
                 maxLevel = 0
             }
-            const result = await getListChildMember(userId, {"maxLevel":maxLevel});
+            const result = await getListChildMember(userId, {"maxLevel":maxLevel+2});
             console.log("Tree data:", result.data);
             setChildState(result);
         } catch (error) {
@@ -73,8 +73,9 @@ const UserDetailPage = () => {
                     <div className="bonus">( Bonus: ${node.bonus} )</div>
                 )}
             </div>}>
-            {node.child && node.child.length > 0 &&
-              node.child.map((childNode) => createNodeTree(childNode))
+            {console.log("TAG LENGTH ", node)}
+            {node.children_member && node.children_member.length > 0 &&
+              node.children_member.map((childNode) => createNodeTree(childNode))
             }
           </TreeNode>
         );
